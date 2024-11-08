@@ -36,7 +36,7 @@
           fullScreenToggle: true, // OPTIONAL. Determines if the full screen toggle (two diagonal arrows in the top right) will be shown. Will default to false if omitted or an invalid value is passed.
           //registration: true, // OPTIONAL. Set to false if you don't want prices and the add to cart / register / waitlist buttons to show up.
           //showWaiversForTeams: true, // OPTIONAL. Set to true if you want the team pages to show which waivers a curler has agreed to or None if they haven't.
-          eventId: 18850, // OPTIONAL. If you only want to show one specific event, enter it's ID here.
+          eventId: 18850, // OPTIONAL. If you only want to show one specific event, enter its ID here.
           excludeEventSections: ["details", "registrations", "spares", "stages"], // OPTIONAL. Event sections you don't want to show up. Possible values: "details", "registrations", "spares", "draws", "stages", "teams", "reports"
           defaultEventSection: "draws", // OPTIONAL. If you want a default event section other than the details view. Possible values: "registrations", "spares", "draws", "stages", "teams", "reports"
           // theme: { // OPTIONAL. You can customize the colors used.
@@ -50,14 +50,18 @@
       }
     )
 
-    // REQUIRED - DO NOT MODIFY. Used for navigation to hopfully prevent third party script interference.
+    // REQUIRED - DO NOT MODIFY. Used for navigation to hopefully prevent third party script interference.
     cio_results.ports.navigateTo.subscribe(function(newHash) {
-      document.location.hash = newHash
+      if (newHash) {
+        document.location.hash = newHash;
+      }
     })
 
     // REQUIRED - DO NOT MODIFY. Used for navigation.
     addEventListener("hashchange", (event) => {
-      cio_results.ports.hashChangeReceiver.send(location.hash)
+      if (cio_results.ports.hashChangeReceiver) {
+        cio_results.ports.hashChangeReceiver.send(location.hash);
+      }
     })
 
     // Start rotating sections every 10 seconds
