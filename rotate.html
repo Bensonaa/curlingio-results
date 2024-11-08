@@ -19,7 +19,7 @@
 
   <!-- REQUIRED. This is how we initialize the widget. You have several options you can configure. Read them over for more information. -->
   <script>
-    var sections = ["details", "registrations", "spares", "draws", "stages", "teams", "reports"];
+    var sections = ["draws", "stages"];
     var sectionIndex = 0;
 
     function rotateSections() {
@@ -37,7 +37,7 @@
           //registration: true, // OPTIONAL. Set to false if you don't want prices and the add to cart / register / waitlist buttons to show up.
           //showWaiversForTeams: true, // OPTIONAL. Set to true if you want the team pages to show which waivers a curler has agreed to or None if they haven't.
           eventId: 18850, // OPTIONAL. If you only want to show one specific event, enter its ID here.
-          excludeEventSections: ["details", "registrations", "spares", "stages"], // OPTIONAL. Event sections you don't want to show up. Possible values: "details", "registrations", "spares", "draws", "stages", "teams", "reports"
+          excludeEventSections: ["details", "registrations", "spares", "teams", "reports"], // OPTIONAL. Event sections you don't want to show up. Possible values: "details", "registrations", "spares", "draws", "stages", "teams", "reports"
           defaultEventSection: "draws", // OPTIONAL. If you want a default event section other than the details view. Possible values: "registrations", "spares", "draws", "stages", "teams", "reports"
           // theme: { // OPTIONAL. You can customize the colors used.
           //   primary: "#ed1940", // OPTIONAL. The primary color in hexadecimal (important buttons / links / backgrounds). Default is red: #ed1940
