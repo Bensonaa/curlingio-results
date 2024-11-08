@@ -53,7 +53,7 @@
                     }
                 )
 
-                // REQUIRED - DO NOT MODIFY. Used for navigation to hopfully prevent third party script interference.
+                // REQUIRED - DO NOT MODIFY. Used for navigation to hopefully prevent third party script interference.
                 cio_results.ports.navigateTo.subscribe(function(newHash) {
                     document.location.hash = newHash
                 })
@@ -62,18 +62,6 @@
                 addEventListener("hashchange", (event) => {
                     cio_results.ports.hashChangeReceiver.send(location.hash)
                 })
-
-                function openFullscreen() {
-                    if (document.documentElement.requestFullscreen) {
-                        document.documentElement.requestFullscreen();
-                    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-                        document.documentElement.mozRequestFullScreen();
-                    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-                        document.documentElement.webkitRequestFullscreen();
-                    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-                        document.documentElement.msRequestFullscreen();
-                    }
-                }
             </script>
         </div>
         <div class="column-33">
@@ -107,7 +95,7 @@
                     }
                 )
 
-                // REQUIRED - DO NOT MODIFY. Used for navigation to hopfully prevent third party script interference.
+                // REQUIRED - DO NOT MODIFY. Used for navigation to hopefully prevent third party script interference.
                 cio_results.ports.navigateTo.subscribe(function(newHash) {
                     document.location.hash = newHash
                 })
@@ -119,5 +107,19 @@
             </script>
         </div>
     </div>
+
+    <script>
+        function openFullscreen() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                document.documentElement.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>
